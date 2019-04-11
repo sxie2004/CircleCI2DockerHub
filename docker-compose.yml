@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: $DOCKER_USER/web_test
+    restart: always
+    ports:
+      - "8000:8000"

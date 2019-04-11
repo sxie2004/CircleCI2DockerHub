@@ -1,0 +1,21 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true
+
+      # build and push Docker image
+      - run: |
+          TAG="latest"
+          docker-compose build
+          docker login -u $DOCKER_USER -p $DOCKER_PASS 
+          docker push $DOCKER_USER/web_test:$TAG

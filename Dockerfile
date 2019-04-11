@@ -1,7 +1,7 @@
 #Docker file for a slim Ubuntu-based Python3 image
 
 FROM ubuntu:latest
-MAINTAINER buyingtime "sean@sure.market"
+MAINTAINER Sean Xie "sxie2004@gmail.com"
 
 RUN apt-get update \
 && apt-get install -y supervisor python3 python3-pip python3-dev \

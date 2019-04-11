@@ -14,8 +14,6 @@ jobs:
           docker_layer_caching: true
 
       # build and push Docker image
-      - run: |
-          TAG="latest"
-          docker-compose build
-          docker login -u $DOCKER_USER -p $DOCKER_PASS 
-          docker push $DOCKER_USER/web_test:$TAG
+      - run:
+          name: 'build docker image then Push to docker hub'
+          command: 'docker-compose build; docker login -u $DOCKER_USER -p $DOCKER_PASS; docker push $DOCKER_USER/web_test:latest'

@@ -16,7 +16,9 @@ project settings. These two variables are: DOCKER_USER and DOCKER_PASS. These ar
 
 ### Pull docker image and run it locally
 docker login
+
 docker pull sxie2004/web_test
+
 docker run -p 8000:8000/tcp sxie2004/web_test
 
 You should see the sample site running on port 8000.  You should see "Hello world!"
